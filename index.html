@@ -5,12 +5,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <!--Put your D3 import statement between these two lines-->
     <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="http://d3js.org/d3.v3.js" charset="utf-8"></script>
 <!--Put your D3 import statement between these two lines-->
 </head>
 
 <body>
 	<div id="partOne">
         <h1>Part One: </h1>
+
 	</div>
     
     <div id="partTwo">
@@ -35,9 +37,31 @@
     <script type="text/javascript">
         // Put your part one code here ***********************
 
+        d3.csv('data/anscombe_I.csv', function(csvData){
+            var data = csvData;
+            checkDataset(data);
+        });
+        
+        d3.csv('data/anscombe_II.csv', function(csvData){
+            var data = csvData;
+            checkDataset(data);
+        });
+        
+        d3.csv('data/anscombe_III.csv', function(csvData){
+            var data = csvData;
+            checkDataset(data);
+        });
+        
+        d3.csv('data/anscombe_IV.csv', function(csvData){
+            var data = csvData;
+            checkDataset(data);
+        });
+
+        
         
         // Leave this to test your data uploading. All data uploading should be above this line
         function checkDataset(dataset) {
+            
             if (dataset.length == 11)
                 $("#partOne").append("<p>data loaded correctly</p>");
             else
